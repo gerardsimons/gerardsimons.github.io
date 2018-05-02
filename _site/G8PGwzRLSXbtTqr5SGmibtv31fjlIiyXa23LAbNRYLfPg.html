@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['timeline']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var container = document.getElementById('timeline');
+        var chart = new google.visualization.Timeline(container);
+        var dataTable = new google.visualization.DataTable();
+
+        // dataTable.addColumn({ type: 'string', id: 'Track' });
+        dataTable.addColumn({ type: 'string', id: 'Milestone' });
+        dataTable.addColumn({ type: 'date', id: 'Start' });
+        dataTable.addColumn({ type: 'date', id: 'End' });
+        dataTable.addRows([
+          
+          [ 'Hardware Installation RPA boat', new Date(2018, 6, 1), new Date(2018, 9, 1) ],
+          [ 'Key Hire AI Developer', new Date(2018, 6, 1), new Date(2018, 12, 1) ],
+          [ 'Interfacing AI and NAUTIS simulator', new Date(2018, 6, 1), new Date(2018, 12, 1) ],
+          [ 'Interfacing AI and RPA boat', new Date(2018, 7, 1), new Date(2018, 10, 1) ],
+          [ 'Developing AI Curriculum', new Date(2018, 8, 1), new Date(2018, 11, 1) ],
+          [ 'Developing RPA sensors simulators', new Date(2018, 9, 1), new Date(2018, 12, 1) ],
+          [ 'Acquisition of real-world RPA data', new Date(2018, 9, 1), new Date(2019, 3, 1) ],
+          [ 'AI Training Simulator', new Date(2018, 12, 1), new Date(2019, 3, 1) ],
+          [ 'Real-world training of AI', new Date(2019, 3, 1), new Date(2019, 6, 1) ], 
+          [ 'Final Real-world test with RPA boat', new Date(2019, 6, 1), new Date(2019, 7, 1) ]
+          ]);
+
+        // dataTable.addRows([
+        //   ['1', new Date(2018, 6, 1), new Date(2018, 12, 1) ],
+        //   ['2', new Date(2018, 6, 1), new Date(2018, 9, 1) ],
+        //   ['3', new Date(2018, 9, 1), new Date(2018, 12, 1) ],
+        //   ['4', new Date(2018, 6, 1), new Date(2018, 12, 1) ],
+        //   ['5', new Date(2018, 9, 1), new Date(2019, 3, 1) ],
+        //   ['6', new Date(2018, 9, 1), new Date(2018, 12, 1) ],
+        //   ['7', new Date(2018, 12, 1), new Date(2019, 3, 1) ],
+        //   ['8', new Date(2018, 9, 1), new Date(2018, 12, 1) ],
+        //   ['9', new Date(2019, 3, 1), new Date(2019, 6, 1) ], 
+        //   ['10', new Date(2019, 6, 1), new Date(2019, 7, 1) ]
+        // ]);
+
+        chart.draw(dataTable);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="timeline" style="height: 800px;"></div>
+  </body>
+</html>
